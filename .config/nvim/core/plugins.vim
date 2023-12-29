@@ -17,4 +17,4 @@ let g:vimtex_view_skim_sync = 1 " Value 1 allows forward search after every succ
 let g:vimtex_view_skim_activate = 1 " Value 1 allows change focus to skim after command `:VimtexView` is given
 
 " auto clear the jump lists
-autocmd VimEnter * :clearjumps
+" autocmd VimEnter * :clearjumps

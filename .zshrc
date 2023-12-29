@@ -6,8 +6,6 @@ source $HOME/.local.zsh  # load environment variables and secret keys
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export PATH="/Users/kyy/miniconda3/bin:$PATH"
@@ -20,7 +18,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,6 +70,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+#
+# autosuggestions color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -82,7 +82,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
+plugins=(
+   git
 	 zsh-autosuggestions
    zsh-syntax-highlighting)
 
@@ -102,6 +103,9 @@ else
   export EDITOR='nvim'
 fi
 
+# source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # enable vim key bindings in terminal
 bindkey -v
 bindkey -v '^?' backward-delete-char
@@ -111,12 +115,9 @@ bindkey ^S history-incremental-search-backward
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# autosuggest color
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(starship init zsh)"

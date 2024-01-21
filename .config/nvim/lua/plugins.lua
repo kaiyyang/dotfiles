@@ -119,7 +119,7 @@ return require('packer').startup(function(use)
   -- DAP
   use { "mfussenegger/nvim-dap", config = [[require('config.nvim-dap')]] }
   use {'nvim-telescope/telescope-dap.nvim'}
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config = function() require("dapui").setup() end }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config = [[require('config.nvim-dap-ui')]] }
   
   -- language set up for rust, go, python
   use { "simrat39/rust-tools.nvim", config = [[require('config.rust-tools')]] }
@@ -143,6 +143,9 @@ return require('packer').startup(function(use)
  
   -- Github Copilot
   -- use { "github/copilot.vim" }
+
+  -- notify
+  use 'rcarriga/nvim-notify'
 
   -- ColorScheme
   use({ 'rose-pine/neovim', as = 'rose-pine' })

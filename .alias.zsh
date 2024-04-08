@@ -1,4 +1,4 @@
 alias vim='nvim'
 
-alias dotfiles='/usr/bin/git --git-dir=/Users/kyy/.dotfiles/ --work-tree=/Users/kyy'
+alias dotfiles='/usr/bin/git --git-dir=/$HOME/.dotfiles/ --work-tree=$HOME'
 

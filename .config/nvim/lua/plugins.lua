@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
   -- Better git commit experience
   use { "rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]] }
   -- Git blame
-  use { "f-person/git-blame.nvim", setup = [[require('config.git-blame')]] }
+  -- use { "f-person/git-blame.nvim", setup = [[require('config.git-blame')]] }
 
   -- The missing auto-completion for cmdline!
   use { "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] }
@@ -120,9 +120,10 @@ return require('packer').startup(function(use)
     end,
   }
   -- DAP
+  use { "nvim-neotest/nvim-nio" }
   use { "mfussenegger/nvim-dap", config = [[require('config.nvim-dap')]] }
   use {'nvim-telescope/telescope-dap.nvim'}
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config = [[require('config.nvim-dap-ui')]] }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}, config = [[require('config.nvim-dap-ui')]] }
   
   -- language set up for rust, go, python
   use { "simrat39/rust-tools.nvim", config = [[require('config.rust-tools')]] }

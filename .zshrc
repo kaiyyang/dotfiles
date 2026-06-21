@@ -85,7 +85,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 plugins=(
    git
 	 zsh-autosuggestions
-   zsh-syntax-highlighting)
+   zsh-syntax-highlighting
+   zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,9 +108,9 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # enable vim key bindings in terminal
-bindkey -v
-bindkey -v '^?' backward-delete-char
-bindkey ^S history-incremental-search-backward 
+# bindkey -v
+# bindkey -v '^?' backward-delete-char
+# bindkey ^S history-incremental-search-backward 
 # bindkey ^S history-incremental-search-forward
 
 # Compilation flags
